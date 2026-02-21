@@ -5,8 +5,7 @@ EXPOSE 10000
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
-WORKDIR /src/backend/SnakeGame.Api
-RUN dotnet publish -c Release -o /app/publish
+RUN dotnet publish backend/SnakeGame.Api/SnakeGame.Api.csproj -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
