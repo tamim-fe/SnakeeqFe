@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Modern Dark UI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-container">
+        <header>
+            <h1>SNAKE<span>CORE</span></h1>
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="label">SCORE</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">BEST</span>
+                    <span id="high-score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+            <div id="game-over-overlay" class="overlay hidden">
+                <div class="overlay-content">
+                    <h2>GAME OVER</h2>
+                    <p>Your Score: <span id="final-score">0</span></p>
+                    <div class="input-group">
+                        <input type="text" id="player-name" placeholder="Enter your name" maxlength="15">
+                        <button id="submit-score">SUBMIT SCORE</button>
+                    </div>
+                    <button id="restart-btn" class="secondary-btn">PLAY AGAIN</button>
+                </div>
+            </div>
+
+            <div id="start-overlay" class="overlay">
+                <div class="overlay-content">
+                    <h2>READY?</h2>
+                    <p>Use arrow keys to control the snake</p>
+                    <button id="start-btn">START GAME</button>
+                </div>
+            </div>
+        </main>
+
+        <aside class="leaderboard-section">
+            <h3>TOP 10 PILOTS</h3>
+            <ul id="leaderboard-list">
+                <li class="loading">Loading records...</li>
+            </ul>
+        </aside>
+
+        <div class="signature">
+            Developed by <span class="soft-red">Tamim Fe</span>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
